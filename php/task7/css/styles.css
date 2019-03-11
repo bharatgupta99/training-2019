@@ -1,0 +1,11 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.heading {
+    height: 70px;
+    color: white;
+    background-color: #015CDC;
+    font-size: 32px;
+}

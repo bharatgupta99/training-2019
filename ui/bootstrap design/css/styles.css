@@ -1,0 +1,116 @@
+.company-info-container {
+    background-color: #086BFF;
+    height: 330px;
+    overflow: scroll;
+}
+
+.company-info .name {
+    color: white;
+    font-size: 52px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.company-info .description {
+    color: #60B4FA;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.what-we-do {
+    font-weight: 100;
+}
+
+.contact {
+    font-weight: 200;
+}
+.contact p {
+    margin: 0;
+}
+
+.cards {
+    background-color: aqua;
+    height: 230px;
+}
+
+.my-card {
+    height: 200px;
+    width: 300px;
+    background-color: #CCCCCC;
+    color: #959595;
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.fluid-image {
+    background-image: url("../images/design.jpg");
+    height: 340px;
+    background-size: cover;
+    color: white;
+}
+
+.fluid-image p {
+    font-size: 24px;
+    font-weight: 200;
+    margin-top: 10px;
+}
+
+
+.pricing-heading h1 {
+    font-weight: 300;
+}
+
+.pricing-heading p {
+    font-size: 20px;
+    font-weight: 200;
+}
+.card {
+    height: 340px;
+    width: 300px;
+    box-shadow: 0.2px 0.2px grey;
+    overflow: scroll;
+    margin-top: 10px;
+}
+
+.card-body p{
+    margin: 0;
+}
+
+.card-title span{
+    color: #4C5256;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.footer {
+    margin-top: 120px;
+    height: auto;
+    padding-bottom: 120px;
+}
+
+.bootstap-icon {
+    background-color: #5D2B7F;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+.footer p {
+    margin: 0 0 1px 0;
+    color: #8B9399;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+@media only screen and (max-width: 1199px) {
+    .my-card {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card {
+      margin-left: auto;
+      margin-right: auto;
+    }
+}
