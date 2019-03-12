@@ -6,11 +6,12 @@
 
     $id = $_POST['id'];
 
-    $sql = "DELETE FROM todoCollection WHERE id=".$id;
+
+    $sql = "DELETE FROM todoCollection WHERE id='".$id."'";
     if ($conn->query($sql) === TRUE) {
         echo json_encode("Success");
     } else {
-        echo json_encode("Error" . $conn->error);
+        echo json_encode("Error " . $conn->error);
     }
 
     disconnect();
