@@ -7,7 +7,11 @@
     $id = $_POST['id'];
 
     $sql = "DELETE FROM todoCollection WHERE id=".$id;
-    $conn->query($sql);
+    if ($conn->query($sql) === TRUE) {
+        echo json_encode("Success");
+    } else {
+        echo json_encode("Error" . $conn->error);
+    }
 
     disconnect();
 ?>

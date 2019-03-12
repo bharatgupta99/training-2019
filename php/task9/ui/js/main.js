@@ -5,6 +5,17 @@ $(document).ready(function () {
         event.preventDefault();
         addTodo(this);
     });
+
+    $(document).on("keypress", function (e) {
+        if (e.which == 13) {
+            var caps = document.getElementsByClassName("caption");
+            for (i = 0; i < caps.length; i++) {
+                if (caps[i].getAttribute('contenteditable')) {
+                    caps[i].blur();
+                }
+            }
+        }
+    });
 });
 
 
@@ -16,6 +27,7 @@ function createLiNode(todo) {
 
     var d1 = document.createElement("div");
     d1.id = "caption-" + todo['id'];
+    d1.className = "caption";
     d1.onfocusout = function () {
         saveTodo(todo['id']);
     }
@@ -103,7 +115,10 @@ function addTodo(form) {
         type: "POST",
         data: serializeData,
         success: function (response, textStatus, jqXHR) {
-            fetchTodoAndUpdateUI(response);
+            response = JSON.parse(response);
+            var node = createLiNode(response[0]);
+            var todos = document.getElementById("todos");
+            todos.appendChild(node);
             console.log("Todo added successfully!");
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -157,12 +172,6 @@ function done(id) {
 function edit(id) {
     let cap = document.getElementById("caption-" + id);
     cap.setAttribute("contenteditable", true);
-    cap.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            alert("A");
-        }
-    });
     cap.focus();
 }
 

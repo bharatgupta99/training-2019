@@ -7,7 +7,13 @@
     $id = $_POST['id'];
 
     $sql = "UPDATE todoCollection SET isCompleted=1 WHERE id=".$id;
-    $conn->query($sql);
+    
+    if ($conn->query($sql) === TRUE) {
+        echo json_encode("Success"); 
+    } else {
+        echo json_encode("Updation Error " . $conn->error);
+    }
+
 
     disconnect();
 ?>
