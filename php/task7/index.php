@@ -19,14 +19,14 @@
         $result = $conn->query($sql);
     ?>
 
-    <div class="heading d-flex justify-content-center align-items-center w-100">My Todo</div>
+<div class="heading d-flex justify-content-center align-items-center w-100">My Todo</div>
 
-    <div class="container mt-5 text-center">
-        <form method="POST" action="submit.php">
-            <input class="w-50 form-control ml-auto mr-auto" name="caption" type="text" placeholder="Todo here..." required><br>
-            <button class="btn btn-primary mt-2" type="submit">Submit</button>
-        </form>
-    </div>
+<div class="container mt-5 text-center">
+    <form method="POST" action="submit.php">
+        <input class="w-50 form-control ml-auto mr-auto" name="caption" type="text" placeholder="Todo here..." required><br>
+        <button class="btn btn-primary mt-2" type="submit">Submit</button>
+    </form>
+</div>
 
     <div class="container w-50 mt-4">
         <ul>
@@ -36,7 +36,7 @@
             ?>
 
             <li class="d-flex justify-content-between mt-2">
-                <div contenteditable="false" id="caption-<?php echo $row['id']; ?>">
+                <div contenteditable="false" id="caption-<?php echo $row['id']; ?>" onfocusout=" focuslost(<?php echo $row['id']; ?>) ">
                     <?php if($row['isCompleted']) { ?>
                         <strike><?php echo $row['caption']; ?></strike>
                     <?php } else {?>
@@ -63,6 +63,7 @@
     </div>
 
     <script>
+        var t = null;
         function removeRemove(i) {
             location.href = 'remove.php?id=' + i;
         }
@@ -70,18 +71,24 @@
             location.href = 'done.php?id=' + i;
         }
         function edit(i) {
-            var editBtn = document.getElementById("edit-" + i);
-            var task = document.getElementById("caption-" + i);
+            let editBtn = document.getElementById("edit-" + i);
+            let task = document.getElementById("caption-" + i);
             if (editBtn.innerHTML == "Edit") {
+                t = task.innerHTML;
                 task.setAttribute("contenteditable", true);
                 task.focus();
                 editBtn.innerHTML = "Save";
-            } else {
-                task.setAttribute("contenteditable", false);
-                editBtn.innerHTML = "Edit";
-                location.href = 'edit.php?caption=' + task.innerHTML + '&id=' + i;
-            }
+            } 
         }
+        
+        function focuslost(i) {
+            let editBtn = document.getElementById("edit-" + i);
+            let task = document.getElementById("caption-" + i);
+            task.setAttribute("contenteditable", false);
+            editBtn.innerHTML = "Edit";
+            location.href = 'edit.php?caption=' + task.innerHTML + '&id=' + i;
+        }
+
     </script>
 
     <?php
