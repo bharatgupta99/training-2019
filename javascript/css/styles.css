@@ -24,11 +24,46 @@ body {
   font-weight: 100;
 }
 
+.todo-box-container {
+  background-color: white;
+  width: 534px;
+  height: 290px;
+  margin: auto;
+  position: relative;
+}
+
 .todo-box {
   background-color: white;
-  width: 535px;
-  height: auto;
-  margin: auto;
+  width: 534px;
+  height: 290px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  box-shadow: 0 0.2px 0.2px grey;
+}
+
+.todo-box-back-1 {
+  background-color: white;
+  width: 510px;
+  height: 295px;
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  z-index: 2;
+  box-shadow: 0 0.2px 0.2px grey;
+}
+.todo-box-back-2 {
+  background-color: white;
+  width: 486px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  z-index: 1;
+  box-shadow: 0 0.2px 0.2px grey;
 }
 
 .todo-input {
@@ -46,7 +81,9 @@ body {
   font-size: 24px;
   cursor: pointer;
   text-align: center;
+  border: 0;
 }
+
 .todo-input-box {
   width: 89%;
   padding: 0;
@@ -55,6 +92,7 @@ body {
   font-size: 24px;
   font-family: "Roboto", sans-serif;
   font-weight: 100;
+  color: #7d7d7d;
 }
 
 .todo-input-box:focus {
@@ -78,6 +116,7 @@ body {
   display: flex;
   align-items: center;
   border-bottom: 2px solid #f8f8fa;
+  overflow: scroll;
 }
 .todo-check {
   height: 36px;
@@ -95,6 +134,7 @@ body {
   font-weight: 300;
   font-size: 24px;
   color: #7d7d7d;
+  cursor: default;
 }
 
 .todo-options {
@@ -121,6 +161,10 @@ body {
   color: #7d7d7d;
   border: 0;
   cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .active {

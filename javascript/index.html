@@ -11,55 +11,44 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/main.js"></script>
     <title>Todo</title>
   </head>
   <body>
     <div class="todo-app">
       <p class="heading">todos</p>
-      <div class="todo-box">
-        <div class="todo-input">
-          <i class="fas fa-angle-down"></i>
-          <input
-            type="text"
-            class="todo-input-box"
-            placeholder="What need to be done?"
-          />
-        </div>
-        <!-- TodoList -->
-        <ul class="todo-list">
-          <li class="todo-item">
-            <span class="checkbox-container"
-              ><input type="checkbox" class="todo-check"
-            /></span>
-            <span class="todo">Do this</span>
-          </li>
-          <li class="todo-item">
-            <span class="checkbox-container"
-              ><input type="checkbox" class="todo-check"
-            /></span>
-            <span class="todo">Do that</span>
-          </li>
-          <li class="todo-item">
-            <span class="checkbox-container"
-              ><input type="checkbox" class="todo-check"
-            /></span>
-            <span class="todo">Do Nothing</span>
-          </li>
-          <li class="todo-item">
-            <span class="checkbox-container"
-              ><input type="checkbox" class="todo-check"
-            /></span>
-            <span class="todo">Do Nothing</span>
-          </li>
-        </ul>
-        <div class="todo-options">
-          <p class="todo-left-count">3 items left</p>
-          <div class="todo-option-btns">
-            <button class="btn all active">All</button>
-            <button class="btn pending">Active</button>
-            <button class="btn completed">Completed</button>
+      <div class="todo-box-container">
+        <div class="todo-box">
+          <form class="todo-input" id="todo-input-form">
+            <button
+              type="submit"
+              id="todo-input-form"
+              class="fas fa-angle-down"
+            ></button>
+            <input
+              type="text"
+              class="todo-input-box"
+              id="todo-input-box"
+              placeholder="What need to be done?"
+              required
+              autocomplete="off"
+            />
+          </form>
+          <!-- TodoList -->
+          <ul class="todo-list" id="todo-list"></ul>
+          <div class="todo-options">
+            <p class="todo-left-count">
+              <span id="todo-count">0 </span>items left
+            </p>
+            <div class="todo-option-btns">
+              <button class="btn active" id="btn-all">All</button>
+              <button class="btn" id="btn-pending">Active</button>
+              <button class="btn" id="btn-complete">Completed</button>
+            </div>
           </div>
         </div>
+        <div class="todo-box-back-1"></div>
+        <div class="todo-box-back-2"></div>
       </div>
       <!-- help -->
       <div class="help">
