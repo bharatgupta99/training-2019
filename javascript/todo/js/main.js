@@ -17,6 +17,19 @@ window.onload = function() {
       node.style.display = "none";
     }
 
+    var deleteTodoBtn = node.getElementsByClassName("todo-delete")[0];
+    node.addEventListener("mouseover", () => {
+      deleteTodoBtn.style.display = "initial";
+    });
+    node.addEventListener("mouseleave", () => {
+      deleteTodoBtn.style.display = "none";
+    });
+    deleteTodoBtn.addEventListener("click", () => {
+      node.remove();
+      count--;
+      updateCount(count);
+    });
+
     var checkbox = node.getElementsByTagName("input")[0];
     checkbox.addEventListener("change", () => {
       if (btnPending.classList.contains("active")) {
@@ -55,6 +68,7 @@ window.onload = function() {
         todo.blur();
       }
     });
+
     updateCount(count);
   };
 
@@ -95,8 +109,12 @@ window.onload = function() {
 //This function is creating and appending new items to the list
 function createListItem(val) {
   var parent = document.getElementById("todo-list");
+
   var node = document.createElement("li");
   node.setAttribute("class", "todo-item");
+
+  var todoText = document.createElement("div");
+  todoText.className = "todo-text";
 
   var checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
@@ -111,11 +129,18 @@ function createListItem(val) {
   todo.setAttribute("contenteditable", false);
   todo.innerHTML = val;
 
-  checkBoxContainer.appendChild(checkbox);
-  node.appendChild(checkBoxContainer);
-  node.appendChild(todo);
+  var todoDelete = document.createElement("span");
+  todoDelete.className = "todo-delete";
+  //   todoDelete.id = "todo-delete";
+  todoDelete.innerHTML = "X";
 
+  checkBoxContainer.appendChild(checkbox);
+  todoText.appendChild(checkBoxContainer);
+  todoText.appendChild(todo);
+  node.appendChild(todoText);
+  node.appendChild(todoDelete);
   parent.appendChild(node);
+
   return node;
 }
 

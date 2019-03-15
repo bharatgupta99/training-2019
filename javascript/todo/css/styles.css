@@ -110,23 +110,35 @@ body {
   height: 180px;
   overflow: scroll;
 }
+
+.todo-text {
+  display: flex;
+  align-items: center;
+}
 .todo-item {
   height: 56px;
-  padding: 0 10px 0 10px;
+  padding: 0 20px 0 10px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #f8f8fa;
   overflow: scroll;
 }
+
 .todo-check {
   height: 36px;
   width: 36px;
-  border-radius: 50%;
 }
 .checkbox-container {
-  width: 10%;
   text-align: center;
-  vertical-align: middle;
+}
+
+.todo-delete {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: pointer;
+  display: none;
 }
 
 .todo {
