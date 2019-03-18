@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-app {
+  width: 630px;
+  height: 570px;
+  background-color: #f8f8fa;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.heading {
+  text-align: center;
+  color: #cfbea5;
+  font-size: 6em;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+.todo-box-container {
+  background-color: white;
+  width: 534px;
+  height: 290px;
+  margin: auto;
+  position: relative;
+}
+
+.todo-box {
+  background-color: white;
+  width: 534px;
+  height: 290px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  box-shadow: 0 0.2px 0.2px grey;
+}
+
+.todo-box-back-1 {
+  background-color: white;
+  width: 510px;
+  height: 295px;
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  z-index: 2;
+  box-shadow: 0 0.2px 0.2px grey;
+}
+.todo-box-back-2 {
+  background-color: white;
+  width: 486px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  z-index: 1;
+  box-shadow: 0 0.2px 0.2px grey;
+}
+
+.todo-input {
+  display: inline-block;
+  height: 65px;
+  border-bottom: 3px solid #f8f8fa;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px 0 10px;
+}
+
+.fa-angle-down {
+  width: 10%;
+  color: #a9a9a9;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  border: 0;
+}
+
+.todo-input-box {
+  width: 89%;
+  padding: 0;
+  height: 100%;
+  border: none;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  color: #7d7d7d;
+}
+
+.todo-input-box:focus {
+  outline: none;
+}
+
+.todo-input-box::placeholder {
+  color: #a9a9a9;
+  font-style: italic;
+}
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 180px;
+  overflow: scroll;
+}
+
+.todo-text {
+  display: flex;
+  align-items: center;
+}
+.todo-item {
+  height: 56px;
+  padding: 0 20px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f8f8fa;
+  overflow: scroll;
+}
+
+.todo-check {
+  height: 36px;
+  width: 36px;
+}
+.checkbox-container {
+  text-align: center;
+}
+
+.todo-delete {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: pointer;
+  display: none;
+}
+
+.todo {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #7d7d7d;
+  cursor: default;
+}
+
+.todo-options {
+  box-sizing: border-box;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px 0 10px;
+}
+
+.todo-left-count {
+  width: 50%;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
+  color: #7d7d7d;
+}
+.todo-option-btns {
+  width: 50%;
+}
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9em;
+  color: #7d7d7d;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.active {
+  border: 1px solid darkgrey;
+  border-radius: 10%;
+}
+
+.help {
+  margin-top: 60px;
+  text-align: center;
+  color: darkgrey;
+  font-size: 12px;
+}
+
+.help > p {
+  margin: 0;
+  margin-bottom: 10px;
+}

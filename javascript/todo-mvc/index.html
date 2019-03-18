@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="model/TodoCollection.js"></script>
+    <script src="model/TodoItem.js"></script>
+    <script src="js/main.js"></script>
+    <title>Todo</title>
+  </head>
+  <body>
+    <div class="todo-app">
+      <p class="heading">todos</p>
+      <div class="todo-box-container">
+        <div class="todo-box">
+          <form class="todo-input" id="todo-input-form">
+            <button
+              type="submit"
+              id="todo-input-form"
+              class="fas fa-angle-down"
+            ></button>
+            <input
+              type="text"
+              class="todo-input-box"
+              id="todo-input-box"
+              placeholder="What need to be done?"
+              required
+              autocomplete="off"
+            />
+          </form>
+          <!-- TodoList -->
+          <ul class="todo-list" id="todo-list">
+            <!-- <li class="todo-item">
+              <div class="todo-text">
+                <span class="checkbox-container"
+                  ><input type="checkbox" class="todo-check" id="todo-check"
+                /></span>
+                <span class="todo" contenteditable="false">First</span>
+              </div>
+              <span class="todo-delete" id="todo-delete">X</span>
+            </li> -->
+          </ul>
+          <div class="todo-options">
+            <p class="todo-left-count">
+              <span id="todo-count">0 </span>items left
+            </p>
+            <div class="todo-option-btns">
+              <button class="btn active" id="btn-all">All</button>
+              <button class="btn" id="btn-pending">Active</button>
+              <button class="btn" id="btn-complete">Completed</button>
+            </div>
+          </div>
+        </div>
+        <div class="todo-box-back-1"></div>
+        <div class="todo-box-back-2"></div>
+      </div>
+      <!-- help -->
+      <div class="help">
+        <p>Double click to edit</p>
+        <p>Created by Oscar</p>
+        <p>Refractored by Christop</p>
+        <p>Coded by Bharat</p>
+      </div>
+    </div>
+  </body>
+</html>
