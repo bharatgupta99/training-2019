@@ -13,7 +13,6 @@ function TodoCollection() {
   };
 
   this.removeTodo = id => {
-    console.log(id);
     for (i = 0; i < todoCollection.length; i++) {
       if (todoCollection[i].getId() == id) {
         todoCollection.splice(i, 1);

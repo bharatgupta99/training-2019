@@ -1,5 +1,9 @@
 <?php
 
+
+	header('Access-Control-Allow-Origin: *');
+	header("Access-Control-Allow-Methods: GET, OPTIONS");
+
     require "Connection.php";
 
     $conn = connect("127.0.0.1", "root", "goldtree9", "todos");

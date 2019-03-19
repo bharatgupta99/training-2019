@@ -1,11 +1,7 @@
-var idCount = 0;
-
-function TodoItem(_caption) {
+function TodoItem(_caption, _isCompleted, _id) {
   let caption = _caption;
-  let isCompleted = false;
-  let id = idCount;
-
-  idCount++;
+  let isCompleted = _isCompleted;
+  let id = _id;
 
   this.getCaption = () => {
     return caption;
